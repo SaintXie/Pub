@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgba(44, 0, 62, 0.6);
+	font-family: Arial, sans-serif;
+	padding: 20px 0;
+}
+
+/* 容器初始隐藏 */
+#container {
+	width: 90vw;
+	margin: 0 auto;
+	position: relative;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+/* Masonry布局完成后显示 */
+#container.masonry-initialized {
+	visibility: visible;
+	opacity: 1;
+}
+
+.a-index{
+	text-decoration: none;
+	color: inherit;
+}
+
+.box {
+	width: 40vw;
+	background-color: rgba(106, 0, 85, 0.8);
+	color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 1vh;
+	box-shadow: 1vw 1vh 10px rgba(200, 200, 200, 0.2);
+	padding: 20px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.text {
+	margin-bottom: 10px;
+}
+
+.text-index {
+	margin-bottom: 10px;
+	font-size: 8vw;
+}
+
+.text_tight {
+	margin-bottom: 0px;
+	display: inline;
+}
+
+.text_tight-index {
+	margin-bottom: 0px;
+	font-size: 8vw;
+}
+
+.img {
+	display: flex;
+	justify-content: center;
+}
+
+.img img {
+	width: 38vw;
+	max-width: 100%;
+	height: auto;
+	border-radius: 1vh;
+	/* 给图片预设高度占位，减少跳动 */
+	min-height: 150px;
+	object-fit: cover;
+}
+
+@media (max-aspect-ratio: 1/1) {
+	.box {
+		width: 90vw;
+	}
+	.img img {
+		width: 80vw;
+	}
+}
+
+
+/*计算器页面*/
+input {
+	width: 90%;
+	padding: 12px;
+	font-size: 18px;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	text-align: center;
+	color: #e8eaed;
+	background-color: #303134;
+}
