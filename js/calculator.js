@@ -34,6 +34,7 @@ GPM_in.addEventListener("keydown", function(event) {
 
             // 显示结果，数字部分红色
             GPM_ot.innerHTML = `本局平均经济为 <span style="color:red;">${formatNumber(efficiency)}</span> 金币/分, ${comment}`;
+            if (window.msnry) window.msnry.layout();
 
             // 自动重置输入框
             GPM_in.value = "";
@@ -85,6 +86,7 @@ time_in.addEventListener("keydown", function (event) {
                 String(minutes).padStart(2, "0");
 
             time_ot.textContent = `结束时间：${result}`;
+            if (window.msnry) window.msnry.layout();
 
             // 重置输入框
             time_in.value = "";

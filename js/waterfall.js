@@ -1494,31 +1494,18 @@ imagesLoaded(container, function() {
 		gutter: 20,
 		fitWidth: true
 	});
+	window.msnry = msnry;
+
 	msnry.on('layoutComplete', function() {
 		container.classList.add('masonry-initialized');
 	});
+
 	msnry.layout();
-});
-var container = document.querySelector('#container');
 
-imagesLoaded(container, function() {
-  var msnry = new Masonry(container, {
-    itemSelector: '.box',
-    columnWidth: '.box',
-    gutter: 20,
-    fitWidth: true
-  });
-
-  msnry.on('layoutComplete', function() {
-    container.classList.add('masonry-initialized');
-  });
-
-  msnry.layout();
-
-  // ✅ 监听所有 details 的展开/收起事件
-  container.addEventListener('toggle', function(e) {
-    if (e.target.tagName.toLowerCase() === 'details') {
-      msnry.layout(); // 重新计算布局
-    }
-  }, true);
+	// ✅ 监听所有 details 的展开/收起事件
+	container.addEventListener('toggle', function(e) {
+		if (e.target.tagName.toLowerCase() === 'details') {
+			msnry.layout(); // 重新计算布局
+		}
+	}, true);
 });/* ===== main.js 内容结束 ===== */
